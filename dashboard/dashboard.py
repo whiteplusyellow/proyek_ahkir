@@ -7,7 +7,7 @@ sns.set(style='dark')
 
 @st.cache_data
 def load_data():
-    df = pd.read_csv("merged.csv")
+    df = pd.read_csv("dashboard/merged.csv")
     df['dteday'] = pd.to_datetime(df['dteday'])
 
     if 'cnt_x' in df.columns and 'cnt_y' in df.columns:
@@ -52,7 +52,7 @@ st.pyplot(fig)
 
 @st.cache_data
 def load_data():
-    df = pd.read_csv("merged.csv")
+    df = pd.read_csv("dashboard/merged.csv")
     df['dteday'] = pd.to_datetime(df['dteday'])
     df = df[(df['dteday'].dt.year >= 2011) & (df['dteday'].dt.year <= 2012)]
     
